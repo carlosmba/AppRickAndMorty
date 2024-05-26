@@ -11,7 +11,7 @@ struct LocationsRepositoryImpl : LocationsRepository{
     let apiService : ApiClientService
     
     func fetchLocations(urlList: String) async throws -> (info: Info, locations: [Location]) {
-        apiService.request(url: urlList, type: <#T##Decodable.Protocol#>)
+        apiService.request(url: URL(string: urlList), type: ResultsLocationsDTO.self)
     }
     
     
